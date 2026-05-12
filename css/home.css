@@ -1485,7 +1485,11 @@ body.ch .cursor-ring {
   }
 
   .stats-inner { flex-direction: column; }
-  .stat-block + .stat-block { border-left: none; border-top: 1px solid rgba(0,0,0,0.05); }
+  .stat-block + .stat-block { border-left: none; border-top: 1px solid rgba(0,0,0,0.04); }
+  .stat-block { text-align: center; padding: 44px 5%; }
+  .stat-block::before { left: 50%; right: auto; width: 40px; transform: translateX(-50%); }
+  .stat-num { font-size: 48px; }
+  .stat-label { font-size: 17px; }
 
   .svc-row {
     grid-template-columns: 48px 1fr 32px;
@@ -1496,8 +1500,10 @@ body.ch .cursor-ring {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
-  .p-stack { grid-template-rows: 240px 240px; }
+  .portfolio-grid > .p-item:first-child { height: 320px; }
+  .p-stack { display: grid; grid-template-rows: 220px 220px; gap: 4px; }
   .portfolio-bottom { grid-template-columns: 1fr; }
+  .portfolio-bottom .p-item { height: 220px !important; }
 
   .process-steps { grid-template-columns: 1fr; gap: 44px; }
 
