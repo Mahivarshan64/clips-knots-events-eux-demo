@@ -49,26 +49,26 @@
    MOBILE MENU
    ============================================ */
 (function initMenu() {
-  const burger = document.querySelector('.hamburger');
+  const burger = document.querySelector('.nav-hamburger');
   const menu   = document.querySelector('.mobile-menu');
   if (!burger || !menu) return;
 
   burger.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
-    burger.classList.toggle('open', open);
+    burger.classList.toggle('active', open);
     burger.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
   });
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open');
-    burger.classList.remove('open');
+    burger.classList.remove('active');
     burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }));
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && menu.classList.contains('open')) {
       menu.classList.remove('open');
-      burger.classList.remove('open');
+      burger.classList.remove('active');
       burger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
